@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DODO STUDIO — estudio de desarrollo web. Landings, tiendas, blogs, apps, portafolios. Una apuesta clara." />
+  <title>DODO STUDIO — Una apuesta clara</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 124'><ellipse cx='62' cy='76' rx='34' ry='33' fill='%231F4D3A'/><circle cx='44' cy='38' r='20' fill='%231F4D3A'/></svg>" />
+
+  <style>
+    /* ================================================================
+       DODO STUDIO v2 — CSS embebido
+       Paleta: crema + verde bosque + amarillo mostaza
+    ================================================================ */
+
+    :root {
+      --cream:        #F4EDE3;
+      --cream-dark:   #E8E0CC;
+      --card-bg:      #FDFAF5;
+      --green-deep:   #1A3E32;
+      --green:        #2D6B55;
+      --green-light:  #5B9B7D;
+      --gold:         #D4A546;
+      --gold-bright:  #E8B84F;
+      --ink:          #0F2B25;
+      --shadow:       rgba(26, 62, 50, 0.12);
+      --shadow-lg:    rgba(26, 62, 50, 0.18);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* fondo sutil */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.5;
+      background-image: 
+        linear-gradient(105deg, transparent 10%, rgba(212, 165, 70, 0.04) 20%, transparent 30%);
+      pointer-events: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ==================== TIPOGRAFÍA ==================== */
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 8vw, 5rem);
+    }
+
+    h2 {
+      font-size: clamp(1.4rem, 4vw, 2.6rem);
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .eyebrow--gold {
+      color: var(--gold-bright);
+    }
+
+    /* ==================== BOTONES ==================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 1rem 1.8rem;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.22, 0.61, 0.36, 1);
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn--primary {
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      color: var(--green-deep);
+      box-shadow: 0 12px 32px -8px rgba(212, 165, 70, 0.5);
+    }
+
+    .btn--primary:hover {
+      box-shadow: 0 16px 48px -8px rgba(212, 165, 70, 0.6);
+    }
+
+    .btn--secondary {
+      background: transparent;
+      border: 2px solid var(--green-deep);
+      color: var(--green-deep);
+    }
+
+    .btn--secondary:hover {
+      background: var(--green-deep);
+      color: var(--cream);
+    }
+
+    /* ==================== NAV ==================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1rem clamp(1.2rem, 6vw, 3rem);
+      background: rgba(244, 237, 227, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .nav.is-scrolled {
+      border-bottom-color: rgba(26, 62, 50, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .nav__logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--green-deep);
+      font-size: 1.1rem;
+    }
+
+    .nav__logo svg {
+      width: 32px;
+      height: 32px;
+      transition: transform 0.3s ease;
+    }
+
+    .nav__logo:hover svg {
+      transform: rotate(-8deg) scale(1.08);
+    }
+
+    .nav__logo em {
+      font-style: normal;
+      font-weight: 500;
+      color: var(--gold);
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav__links a {
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      transition: all 0.25s ease;
+      color: var(--green-deep);
+      position: relative;
+    }
+
+    .nav__links a:not(.nav__cta)::after {
+      content: "";
+      position: absolute;
+      bottom: 8px;
+      left: 1rem;
+      width: calc(100% - 2rem);
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .nav__links a:not(.nav__cta):hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav__cta {
+      background: var(--green-deep);
+      color: var(--cream) !important;
+      box-shadow: 0 8px 24px rgba(26, 62, 50, 0.2);
+    }
+
+    .nav__cta:hover {
+      background: var(--green);
+      box-shadow: 0 12px 32px rgba(26, 62, 50, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .nav__links a:not(.nav__cta) {
+        display: none;
+      }
+    }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem clamp(1.2rem, 6vw, 5rem);
+      max-width: 1200px;
+      margin: 0 auto;
+      z-index: 1;
+    }
+
+    .hero__content {
+      max-width: 680px;
+    }
+
+    .hero__eyebrow {
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .hero__title {
+      color: var(--green-deep);
+      margin-bottom: 1.5rem;
+      line-height: 1.08;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .hero__title em {
+      color: var(--gold);
+      font-style: normal;
+    }
+
+    .hero__lead {
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: var(--green);
+      max-width: 55ch;
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 0.8s ease 0.6s both;
+    }
+
+    .hero__cta {
+      animation: fadeInUp 0.8s ease 0.8s both;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      animation: fadeIn 1s ease 1.2s both;
+    }
+
+    .hero__scroll-line {
+      width: 1.5px;
+      height: 48px;
+      background: linear-gradient(to bottom, var(--green-light), transparent);
+      animation: scrollBounce 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollBounce {
+      0%, 100% {
+        transform: translateY(0);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translateY(12px);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* ==================== JOURNEY ==================== */
+    .journey {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem clamp(1.2rem, 6vw, 5rem) 6rem;
+      z-index: 1;
+    }
+
+    .journey__spine {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @media (max-width: 900px) {
+      .journey__spine {
+        left: clamp(1.2rem, 6vw, 5rem);
+        transform: none;
+        width: 60px;
+      }
+    }
+
+    .journey__river {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.08));
+    }
+
+    .dodo {
+      position: absolute;
+      width: 72px;
+      height: 75px;
+      z-index: 10;
+      will-change: top, left;
+      filter: drop-shadow(0 10px 20px rgba(26, 62, 50, 0.25));
+      transition: none;
+    }
+
+    .dodo svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ==================== PARADAS ==================== */
+    .stops {
+      position: relative;
+      z-index: 1;
+    }
+
+    .stop {
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 2rem;
+      align-items: center;
+      min-height: 45vh;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    .stop__marker {
+      grid-column: 2;
+      justify-self: center;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      border: 3px solid var(--green-deep);
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: var(--green-deep);
+      box-shadow: 0 8px 24px rgba(212, 165, 70, 0.4), inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 2;
+      position: relative;
+    }
+
+    .stop__card {
+      background: var(--card-bg);
+      border: 1px solid rgba(26, 62, 50, 0.1);
+      border-radius: 24px;
+      padding: 2.2rem;
+      box-shadow: 0 20px 60px var(--shadow-lg);
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .stop__card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stop__card:hover {
+      border-color: rgba(26, 62, 50, 0.2);
+      box-shadow: 0 28px 80px rgba(26, 62, 50, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .stop--left .stop__card {
+      grid-column: 1;
+      justify-self: end;
+      margin-right: 1.5rem;
+    }
+
+    .stop--right .stop__card {
+      grid-column: 3;
+      justify-self: start;
+      margin-left: 1.5rem;
+    }
+
+    .stop__tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(212, 165, 70, 0.12);
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 1rem;
+    }
+
+    .stop__card h2 {
+      color: var(--green-deep);
+      margin-bottom: 0.8rem;
+    }
+
+    .stop__card p {
+      font-size: 1rem;
+      color: var(--green);
+      margin-bottom: 1.4rem;
+      line-height: 1.8;
+    }
+
+    .stop__list {
+      list-style: none;
+    }
+
+    .stop__list li {
+      position: relative;
+      padding-left: 1.6rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--ink);
+    }
+
+    .stop__list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.6em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 3px rgba(212, 165, 70, 0.25);
+    }
+
+    @media (max-width: 900px) {
+      .stop {
+        grid-template-columns: 60px 1fr;
+        gap: 1.5rem;
+        min-height: auto;
+        margin-bottom: 3rem;
+      }
+
+      .stop__marker {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      .stop--left .stop__card,
+      .stop--right .stop__card {
+        grid-column: 2;
+        justify-self: stretch;
+        margin: 0;
+        margin-top: 0.5rem;
+      }
+    }
+
+    /* ==================== REFERENCIAS ==================== */
+    .referencias {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 8rem auto 6rem;
+      padding: 0 clamp(1.2rem, 6vw, 5rem);
+    }
+
+    .referencias__header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .referencias__eyebrow {
+      margin-bottom: 1rem;
+    }
+
+    .referencias__title {
+      color: var(--green-deep);
+      margin-bottom: 1rem;
+    }
+
+    .referencias__intro {
+      font-size: 1.1rem;
+      color: var(--green);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .referencias__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .ref-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(26, 62, 50, 0.1);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .ref-card.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ref-card:hover {
+      border-color: rgba(212, 165, 70, 0.3);
+      box-shadow: 0 24px 60px var(--shadow-lg);
+      transform: translateY(-6px);
+    }
+
+    .ref-card__logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.2rem;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      box-shadow: 0 8px 20px rgba(212, 165, 70, 0.2);
+    }
+
+    .ref-card__name {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .ref-card__desc {
+      font-size: 0.9rem;
+      color: var(--green);
+      margin-bottom: 1.2rem;
+      min-height: 40px;
+    }
+
+    .ref-card__link {
+      display: inline-block;
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 25px;
+      border: 2px solid var(--gold);
+      transition: all 0.25s ease;
+    }
+
+    .ref-card__link:hover {
+      background: var(--gold);
+      color: var(--green-deep);
+    }
+
+    /* ==================== CTA ==================== */
+    .cta {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(135deg, var(--green-deep) 0%, var(--green) 100%);
+      color: var(--cream);
+      padding: clamp(4rem, 12vw, 8rem) clamp(1.2rem, 6vw, 5rem);
+      text-align: center;
+      overflow: hidden;
+      border-radius: 32px;
+      margin: 6rem auto;
+      max-width: 1200px;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      opacity: 0.08;
+      background-image: radial-gradient(circle at 20% 50%, var(--gold), transparent 50%),
+                        radial-gradient(circle at 80% 80%, var(--gold), transparent 50%);
+      border-radius: inherit;
+    }
+
+    .cta__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .cta__eyebrow {
+      margin-bottom: 1rem;
+    }
+
+    .cta__title {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: var(--gold-bright);
+      margin-bottom: 1.2rem;
+    }
+
+    .cta__lead {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: rgba(244, 237, 227, 0.92);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    /* ==================== FOOTER ==================== */
+    .footer {
+      background: var(--ink);
+      color: var(--cream-dark);
+      padding: 3rem clamp(1.2rem, 6vw, 5rem) 2.5rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer__brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      font-size: 1.1rem;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .footer__brand em {
+      font-style: normal;
+      font-weight: 500;
+      color: var(--cream-dark);
+    }
+
+    .footer__brand svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .footer__meta {
+      font-size: 0.9rem;
+      color: var(--green-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer__copy {
+      font-size: 0.8rem;
+      color: rgba(244, 237, 227, 0.5);
+    }
+
+    /* ==================== ACCESIBILIDAD ==================== */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+      }
+
+      .stop__card {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <a class="nav__logo" href="#inicio" aria-label="DODO STUDIO">
+      <svg viewBox="0 0 120 124" aria-hidden="true">
+        <defs>
+          <linearGradient id="dodoGold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#E8B84F;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#D4A546;stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="62" cy="78" rx="35" ry="34" fill="#1A3E32"/>
+        <ellipse cx="60" cy="85" rx="24" ry="24" fill="url(#dodoGold)"/>
+        <circle cx="44" cy="38" r="21" fill="#1A3E32"/>
+        <path d="M25 32 q-20 2 -22 18 q1 8 10 9 q10 0 14 -9 q3 -10 -2 -18 z" fill="#2D6B55"/>
+        <path d="M25 32 q-18 1 -20 16 q0 7 8 8 q-3 -10 3 -18 z" fill="#1A3E32"/>
+        <circle cx="46" cy="33" r="3.5" fill="#FDFAF5"/>
+        <circle cx="47.5" cy="33" r="1.8" fill="#1A3E32"/>
+        <path d="M84 66 q15 8 8 28 q-11 5 -17 -6 q-2 -14 9 -22 z" fill="#1A3E32" opacity="0.8"/>
+        <path d="M52 104 L50 116 M68 104 L70 116" stroke="#1A3E32" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+      </svg>
+      DODO <em>STUDIO</em>
+    </a>
+    <nav class="nav__links">
+      <a href="#landing">Landing</a>
+      <a href="#blogs">Blogs</a>
+      <a href="#portfolio">Portafolio</a>
+      <a href="#referencias">Referencias</a>
+      <a href="#contacto" class="nav__cta">WhatsApp</a>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="inicio">
+    <div class="hero__content">
+      <p class="eyebrow hero__eyebrow">Estudio de desarrollo web · Costa Rica</p>
+      <h1 class="hero__title">El ave que no se<br>extinguió: <em>volvió a la web</em></h1>
+      <p class="hero__lead">Hacemos páginas que de verdad funcionan. Bajá por el río y conocé, parada por parada, todo lo que podemos construir para vos.</p>
+      <div class="hero__cta">
+        <a href="#journey" class="btn btn--primary">Empezar el viaje ↓</a>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== JOURNEY ===================== -->
+  <section class="journey" id="journey">
+    <div class="journey__spine">
+      <svg class="journey__river" viewBox="0 0 100 1000" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="riverGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#1A3E32;stop-opacity:0.3" />
+            <stop offset="50%" style="stop-color:#2D6B55;stop-opacity:0.5" />
+            <stop offset="100%" style="stop-color:#1A3E32;stop-opacity:0.3" />
+          </linearGradient>
+        </defs>
+        <path id="riverPath" d="M50,0 C30,80 30,140 50,200 C70,260 70,340 50,400 C30,460 30,540 50,600 C70,660 70,740 50,800 C30,860 30,920 50,980 C60,995 55,1000 50,1000" fill="none" stroke="url(#riverGradient)" stroke-width="4.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+        <path id="riverTrail" d="M50,0 C30,80 30,140 50,200 C70,260 70,340 50,400 C30,460 30,540 50,600 C70,660 70,740 50,800 C30,860 30,920 50,980 C60,995 55,1000 50,1000" fill="none" stroke="#D4A546" stroke-width="2.4" stroke-linecap="round" vector-effect="non-scaling-stroke" opacity="0" />
+      </svg>
+
+      <div class="dodo" id="dodo">
+        <svg viewBox="0 0 120 124">
+          <defs>
+            <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#1A3E32;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#0F2B25;stop-opacity:1" />
+            </linearGradient>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#E8B84F;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#D4A546;stop-opacity:0.9" />
+            </linearGradient>
+          </defs>
+          <!-- cuerpo -->
+          <ellipse cx="62" cy="78" rx="35" ry="34" fill="url(#bodyGrad)" />
+          <!-- panza dorada -->
+          <ellipse cx="60" cy="85" rx="24" ry="24" fill="url(#goldGrad)" />
+          <!-- cabeza -->
+          <circle cx="44" cy="38" r="21" fill="url(#bodyGrad)" />
+          <!-- pico -->
+          <path d="M25 32 q-20 2 -22 18 q1 8 10 9 q10 0 14 -9 q3 -10 -2 -18 z" fill="#2D6B55" />
+          <path d="M25 32 q-18 1 -20 16 q0 7 8 8 q-3 -10 3 -18 z" fill="#1A3E32" />
+          <!-- ojo -->
+          <circle cx="46" cy="33" r="3.5" fill="#FDFAF5" />
+          <circle cx="47.5" cy="33" r="1.8" fill="#0F2B25" />
+          <!-- ala -->
+          <path d="M84 66 q15 8 8 28 q-11 5 -17 -6 q-2 -14 9 -22 z" fill="url(#bodyGrad)" opacity="0.9" />
+          <!-- patas -->
+          <path d="M52 104 L50 116 M68 104 L70 116" stroke="#1A3E32" stroke-width="4.5" stroke-linecap="round" fill="none" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="stops">
+      <!-- STOP 1: LANDING -->
+      <article class="stop stop--left" id="landing">
+        <div class="stop__marker">1</div>
+        <div class="stop__card">
+          <span class="stop__tag">Conversión</span>
+          <h2>Landing pages</h2>
+          <p>Una sola idea, contada para vender. Página única, mensaje claro y un botón que convierte. Ideal para campañas, lanzamientos y captar clientes de verdad.</p>
+          <ul class="stop__list">
+            <li>Carga ultraveloz y optimizada</li>
+            <li>Formularios que convierten</li>
+            <li>Pronta para publicidad</li>
+            <li>Analytics y seguimiento</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- STOP 2: BLOGS -->
+      <article class="stop stop--right" id="blogs">
+        <div class="stop__marker">2</div>
+        <div class="stop__card">
+          <span class="stop__tag">Contenido</span>
+          <h2>Blogs y editorial</h2>
+          <p>Contenido que posiciona. Sitios pensados para escribir, organizar y aparecer en Google. Tu voz y tu idea, con casa propia en la web.</p>
+          <ul class="stop__list">
+            <li>SEO optimizado de base</li>
+            <li>Lectura cómoda y rápida</li>
+            <li>Fácil de actualizar</li>
+            <li>Redes integradas</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- STOP 3: PORTAFOLIOS -->
+      <article class="stop stop--left" id="portfolio">
+        <div class="stop__marker">3</div>
+        <div class="stop__card">
+          <span class="stop__tag">Personal</span>
+          <h2>Portafolios</h2>
+          <p>Tu trabajo, en escena. Para creativos, profesionales y freelancers que necesitan mostrar lo que hacen y dejar huella en quien visite.</p>
+          <ul class="stop__list">
+            <li>Diseño con personalidad</li>
+            <li>Galerías y casos de estudio</li>
+            <li>Contacto directo</li>
+            <li>Portfolio que vende</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== REFERENCIAS ===================== -->
+  <section class="referencias" id="referencias">
+    <div class="referencias__header">
+      <p class="eyebrow referencias__eyebrow">Lo que ya hicimos</p>
+      <h2 class="referencias__title">Casos de éxito</h2>
+      <p class="referencias__intro">Empresas que confían en nosotros y ya tienen su presencia web funcionando. Mira algunos de nuestros proyectos.</p>
+    </div>
+
+    <div class="referencias__grid">
+      <!-- REFERENCIA 1 -->
+      <div class="ref-card">
+        <div class="ref-card__logo">📱</div>
+        <h3 class="ref-card__name">Empresa 1</h3>
+        <p class="ref-card__desc">Descripción del proyecto realizado</p>
+        <a href="#" class="ref-card__link">Ver sitio →</a>
+      </div>
+
+      <!-- REFERENCIA 2 -->
+      <div class="ref-card">
+        <div class="ref-card__logo">🌐</div>
+        <h3 class="ref-card__name">Empresa 2</h3>
+        <p class="ref-card__desc">Descripción del proyecto realizado</p>
+        <a href="#" class="ref-card__link">Ver sitio →</a>
+      </div>
+
+      <!-- REFERENCIA 3 -->
+      <div class="ref-card">
+        <div class="ref-card__logo">✨</div>
+        <h3 class="ref-card__name">Empresa 3</h3>
+        <p class="ref-card__desc">Descripción del proyecto realizado</p>
+        <a href="#" class="ref-card__link">Ver sitio →</a>
+      </div>
+
+      <!-- REFERENCIA 4 (OPCIONAL) -->
+      <div class="ref-card">
+        <div class="ref-card__logo">🚀</div>
+        <h3 class="ref-card__name">Empresa 4</h3>
+        <p class="ref-card__desc">Descripción del proyecto realizado</p>
+        <a href="#" class="ref-card__link">Ver sitio →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta" id="contacto">
+    <div class="cta__inner">
+      <p class="eyebrow cta__eyebrow eyebrow--gold">Ahora es tu turno</p>
+      <h2 class="cta__title">Una apuesta clara</h2>
+      <p class="cta__lead">Contratar un estudio no debería sentirse como un riesgo. Con nosotros, sabés qué recibís, cuándo y por qué. Empecemos tu proyecto ahora.</p>
+      <a href="https://wa.me/506844399202?text=Hola%20DODO%20STUDIO%2C%20quiero%20hablar%20de%20mi%20proyecto%20web" class="btn btn--primary">Escribir por WhatsApp →</a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer__brand">
+      <svg viewBox="0 0 120 124" aria-hidden="true">
+        <ellipse cx="62" cy="78" rx="35" ry="34" fill="#D4A546"/>
+        <circle cx="44" cy="38" r="21" fill="#D4A546"/>
+      </svg>
+      DODO <em>STUDIO</em>
+    </div>
+    <p class="footer__meta">Una apuesta clara · San Ramón, Costa Rica</p>
+    <p class="footer__copy">© <span id="year"></span> DODO STUDIO. Hecho con calma y café.</p>
+  </footer>
+
+  <script>
+    /* ================================================================
+       DODO STUDIO v2 — JavaScript
+       El dodo viaja, el río se dibuja, todo se revela.
+    ================================================================ */
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const year = new Date().getFullYear();
+      document.getElementById('year').textContent = year;
+
+      const reduceMotion = window.matchMedia('(prefers-reduce-motion: reduce)').matches;
+      const nav = document.getElementById('nav');
+      const journey = document.getElementById('journey');
+      const dodo = document.getElementById('dodo');
+      const riverPath = document.getElementById('riverPath');
+      const riverTrail = document.getElementById('riverTrail');
+      const stops = document.querySelectorAll('.stop__card');
+      const refCards = document.querySelectorAll('.ref-card');
+
+      // ========== NAV: borde/sombra al scroll ==========
+      const updateNav = () => nav.classList.toggle('is-scrolled', window.scrollY > 20);
+      updateNav();
+      window.addEventListener('scroll', updateNav, { passive: true });
+
+      // ========== STOPS: reveal con intersection observer ==========
+      if (!reduceMotion && 'IntersectionObserver' in window) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+            }
+          });
+        }, { threshold: 0.2 });
+        stops.forEach((s) => io.observe(s));
+        refCards.forEach((r) => io.observe(r));
+      } else {
+        stops.forEach((s) => s.classList.add('is-visible'));
+        refCards.forEach((r) => r.classList.add('is-visible'));
+      }
+
+      // ========== DODO: viaja por el río ==========
+      if (!journey || !dodo || !riverPath || !riverTrail) return;
+
+      const pathLength = riverPath.getTotalLength();
+      riverTrail.style.strokeDasharray = pathLength;
+      riverTrail.style.strokeDashoffset = pathLength;
+
+      let raf = null;
+
+      const updateDodo = () => {
+        raf = null;
+
+        const rect = journey.getBoundingClientRect();
+        const vh = window.innerHeight;
+        const scrollTop = window.scrollY;
+
+        // progreso: 0 cuando journey entra en pantalla, 1 cuando sale
+        const top = scrollTop + rect.top;
+        const progress = Math.max(0, Math.min(1, (scrollTop + vh * 0.5 - top) / rect.height));
+
+        // posición en la curva
+        const pt = riverPath.getPointAtLength(progress * pathLength);
+        const x = (pt.x / 100) * 100; // viewBox width es 100
+        const y = (pt.y / 1000) * 100; // viewBox height es 1000
+
+        dodo.style.left = x + '%';
+        dodo.style.top = y + '%';
+        dodo.style.transform = `translate(-50%, -50%) rotate(${(x - 50) * 0.4}deg)`;
+
+        // trazo dorado que se dibuja
+        riverTrail.style.strokeDashoffset = pathLength * (1 - progress);
+      };
+
+      const requestDodoUpdate = () => {
+        if (!raf) raf = requestAnimationFrame(updateDodo);
+      };
+
+      window.addEventListener('scroll', requestDodoUpdate, { passive: true });
+      window.addEventListener('resize', updateDodo, { passive: true });
+
+      updateDodo();
+    });
+  </script>
+</body>
+</html>
