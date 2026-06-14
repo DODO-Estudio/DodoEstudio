@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DODO STUDIO — estudio de desarrollo web. Landings, tiendas, blogs, apps, portafolios. Una apuesta clara." />
+  <meta name="description" content="DODO STUDIO — páginas web, menús QR, catálogos digitales y automatización de WhatsApp para negocios en Costa Rica. Una apuesta clara." />
   <title>DODO STUDIO — Una apuesta clara</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 124'><ellipse cx='62' cy='76' rx='34' ry='33' fill='%231F4D3A'/><circle cx='44' cy='38' r='20' fill='%231F4D3A'/></svg>" />
 
@@ -618,6 +618,45 @@
       color: var(--green-deep);
     }
 
+
+
+    /* ==================== PRECIOS DE PLANES ==================== */
+    .plan-pricing {
+      margin: 1.3rem 0 1.2rem;
+      padding: 1rem 1.1rem;
+      border-radius: 18px;
+      background: rgba(212, 165, 70, 0.12);
+      border: 1px solid rgba(212, 165, 70, 0.25);
+    }
+
+    .plan-pricing__main {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-deep);
+      margin-bottom: 0.35rem;
+    }
+
+    .plan-pricing__annual {
+      display: block;
+      font-size: 0.92rem;
+      color: var(--green);
+      line-height: 1.55;
+    }
+
+    .plan-pricing__save {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--green-deep);
+      background: var(--gold-bright);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+    }
+
     /* ==================== CTA ==================== */
     .cta {
       position: relative;
@@ -749,11 +788,11 @@
       DODO <em>STUDIO</em>
     </a>
     <nav class="nav__links">
-      <a href="#landing">Landing</a>
-      <a href="#blogs">Blogs</a>
-      <a href="#portfolio">Portafolio</a>
-      <a href="#referencias">Referencias</a>
-      <a href="#contacto" class="nav__cta">WhatsApp</a>
+      <a href="#presencia-digital">Presencia</a>
+      <a href="#whatsapp-ordenado">WhatsApp</a>
+      <a href="#sistema-completo">Sistema</a>
+      <a href="#referencias">Proyectos</a>
+      <a href="#contacto" class="nav__cta">Cotizar</a>
     </nav>
   </header>
 
@@ -762,9 +801,9 @@
     <div class="hero__content">
       <p class="eyebrow hero__eyebrow">Estudio de desarrollo web · Costa Rica</p>
       <h1 class="hero__title">El ave que no se<br>extinguió: <em>volvió a la web</em></h1>
-      <p class="hero__lead">Hacemos páginas que de verdad funcionan. Bajá por el río y conocé, parada por parada, todo lo que podemos construir para vos.</p>
+      <p class="hero__lead">Creamos sistemas simples para que tu negocio venda mejor: páginas web, menús QR, catálogos digitales y atención automatizada sin complicarte.</p>
       <div class="hero__cta">
-        <a href="#journey" class="btn btn--primary">Empezar el viaje ↓</a>
+        <a href="#journey" class="btn btn--primary">Ver planes ↓</a>
       </div>
     </div>
 
@@ -822,65 +861,113 @@
     </div>
 
     <div class="stops">
-      <!-- STOP 1: LANDING -->
-      <article class="stop stop--left" id="landing">
+      <!-- STOP 1: PRESENCIA DIGITAL -->
+      <article class="stop stop--left" id="presencia-digital">
         <div class="stop__marker">1</div>
         <div class="stop__card">
-          <span class="stop__tag">Conversión</span>
-          <h2>Landing pages</h2>
-          <p>Una sola idea, contada para vender. Página única, mensaje claro y un botón que convierte. Ideal para campañas, lanzamientos y captar clientes de verdad.</p>
+          <span class="stop__tag">Desde ₡95.000 + ₡20.000/mes</span>
+          <h2>Presencia Digital</h2>
+          <p>Para negocios que necesitan verse profesionales en internet sin meterse en sistemas complicados. Ideal para restaurantes, cafeterías, barberías, tiendas y servicios locales.</p>
+          <div class="plan-pricing">
+            <span class="plan-pricing__main">Instalación: ₡95.000 · Mensualidad: ₡20.000</span>
+            <span class="plan-pricing__annual">Pago anual: ₡287.000 en total. Incluye instalación + 12 meses de mantenimiento con 20% de ahorro en la mensualidad.</span>
+            <span class="plan-pricing__save">Ahorro anual: ₡48.000</span>
+          </div>
           <ul class="stop__list">
-            <li>Carga ultraveloz y optimizada</li>
-            <li>Formularios que convierten</li>
-            <li>Pronta para publicidad</li>
-            <li>Analytics y seguimiento</li>
+            <li>Página web profesional y rápida</li>
+            <li>Menú o catálogo digital con QR</li>
+            <li>Botones directos a WhatsApp y redes</li>
+            <li>Mantenimiento mensual para cambios, promos y fotos</li>
           </ul>
         </div>
       </article>
 
-      <!-- STOP 2: BLOGS -->
-      <article class="stop stop--right" id="blogs">
+      <!-- STOP 2: WHATSAPP ORDENADO -->
+      <article class="stop stop--right" id="whatsapp-ordenado">
         <div class="stop__marker">2</div>
         <div class="stop__card">
-          <span class="stop__tag">Contenido</span>
-          <h2>Blogs y editorial</h2>
-          <p>Contenido que posiciona. Sitios pensados para escribir, organizar y aparecer en Google. Tu voz y tu idea, con casa propia en la web.</p>
+          <span class="stop__tag">Desde ₡180.000 + ₡50.000/mes</span>
+          <h2>WhatsApp Ordenado</h2>
+          <p>Automatización inicial para responder preguntas repetidas, ordenar pedidos o citas y evitar que el negocio pierda clientes por no contestar a tiempo.</p>
+          <div class="plan-pricing">
+            <span class="plan-pricing__main">Instalación: ₡180.000 · Mensualidad: ₡50.000</span>
+            <span class="plan-pricing__annual">Pago anual: ₡660.000 en total. Incluye instalación + 12 meses de soporte con 20% de ahorro en la mensualidad.</span>
+            <span class="plan-pricing__save">Ahorro anual: ₡120.000</span>
+          </div>
           <ul class="stop__list">
-            <li>SEO optimizado de base</li>
-            <li>Lectura cómoda y rápida</li>
-            <li>Fácil de actualizar</li>
-            <li>Redes integradas</li>
+            <li>Respuestas automáticas para horarios, ubicación y menú</li>
+            <li>Captura de pedidos, reservas o consultas</li>
+            <li>Registro en Google Sheets</li>
+            <li>Flujos simples con WhatsApp, formularios y automatizaciones</li>
           </ul>
         </div>
       </article>
 
-      <!-- STOP 3: PORTAFOLIOS -->
-      <article class="stop stop--left" id="portfolio">
+      <!-- STOP 3: SISTEMA COMPLETO -->
+      <article class="stop stop--left" id="sistema-completo">
         <div class="stop__marker">3</div>
         <div class="stop__card">
-          <span class="stop__tag">Personal</span>
-          <h2>Portafolios</h2>
-          <p>Tu trabajo, en escena. Para creativos, profesionales y freelancers que necesitan mostrar lo que hacen y dejar huella en quien visite.</p>
+          <span class="stop__tag">Desde ₡300.000 + ₡90.000/mes</span>
+          <h2>Sistema Completo</h2>
+          <p>La solución completa para negocios que quieren presencia digital, catálogo o menú, automatización de atención y seguimiento mensual en un solo paquete.</p>
+          <div class="plan-pricing">
+            <span class="plan-pricing__main">Instalación: ₡300.000 · Mensualidad: ₡90.000</span>
+            <span class="plan-pricing__annual">Pago anual: ₡1.164.000 en total. Incluye instalación + 12 meses de soporte, mejoras y mantenimiento con 20% de ahorro en la mensualidad.</span>
+            <span class="plan-pricing__save">Ahorro anual: ₡216.000</span>
+          </div>
           <ul class="stop__list">
-            <li>Diseño con personalidad</li>
-            <li>Galerías y casos de estudio</li>
-            <li>Contacto directo</li>
-            <li>Portfolio que vende</li>
+            <li>Página web + menú o catálogo digital</li>
+            <li>Atención automatizada para clientes</li>
+            <li>Solicitud de reseñas y reportes mensuales</li>
+            <li>Soporte, mejoras y mantenimiento continuo</li>
           </ul>
         </div>
       </article>
     </div>
   </section>
 
-  s
+  <!-- ===================== REFERENCIAS ===================== -->
+  <section class="referencias" id="referencias">
+    <div class="referencias__header">
+      <p class="eyebrow referencias__eyebrow">Lo que ya hicimos</p>
+      <h2 class="referencias__title">Proyectos funcionando</h2>
+      <p class="referencias__intro">Algunos sitios y demos reales que muestran el tipo de presencia digital que podemos construir para negocios locales.</p>
+    </div>
+
+    <div class="referencias__grid">
+      <!-- REFERENCIA 1 -->
+      <div class="ref-card">
+        <div class="ref-card__logo">JM</div>
+        <h3 class="ref-card__name">Joyería Mía Boutique</h3>
+        <p class="ref-card__desc">Catálogo digital de perfumes y productos con filtros, diseño minimalista y contacto directo por WhatsApp.</p>
+        <a href="https://joyeriamiaboutique.com/" target="_blank" rel="noopener" class="ref-card__link">Ver sitio →</a>
+      </div>
+
+      <!-- REFERENCIA 2 -->
+      <div class="ref-card">
+        <div class="ref-card__logo">EM</div>
+        <h3 class="ref-card__name">El Mosquero Demo</h3>
+        <p class="ref-card__desc">Demo profesional para restaurante/bar. No usa dominio propio, pero muestra cómo se vería una presencia web clara, moderna y lista para clientes.</p>
+        <a href="https://sebass669.github.io/El-Mosquero-Bar-y-Restaurante/" target="_blank" rel="noopener" class="ref-card__link">Ver sitio →</a>
+      </div>
+
+      <!-- REFERENCIA 3 -->
+      <div class="ref-card">
+        <div class="ref-card__logo">EB</div>
+        <h3 class="ref-card__name">El Búho Demo</h3>
+        <p class="ref-card__desc">Demo web para restaurante vegetariano, pensado como landing moderna con enfoque en menú digital.</p>
+        <a href="https://dodo-estudio.github.io/el-buho-demo/" target="_blank" rel="noopener" class="ref-card__link">Ver sitio →</a>
+      </div>
+    </div>
+  </section>
 
   <!-- ===================== CTA ===================== -->
   <section class="cta" id="contacto">
     <div class="cta__inner">
       <p class="eyebrow cta__eyebrow eyebrow--gold">Ahora es tu turno</p>
       <h2 class="cta__title">Una apuesta clara</h2>
-      <p class="cta__lead">Contratar un estudio no debería sentirse como un riesgo. Con nosotros, sabés qué recibís, cuándo y por qué. Empecemos tu proyecto ahora.</p>
-      <a href="https://wa.me/506844399202?text=Hola%20DODO%20STUDIO%2C%20quiero%20hablar%20de%20mi%20proyecto%20web" class="btn btn--primary">Escribir por WhatsApp →</a>
+      <p class="cta__lead">Elegí un plan, contanos qué necesita tu negocio y armamos una solución clara: web, menú digital, catálogo o atención automatizada.</p>
+      <a href="https://wa.me/50688139961?text=Hola%20DODO%20STUDIO%2C%20quiero%20cotizar%20uno%20de%20sus%20planes%20digitales" class="btn btn--primary">Cotizar por WhatsApp →</a>
     </div>
   </section>
 
@@ -893,7 +980,7 @@
       </svg>
       DODO <em>STUDIO</em>
     </div>
-    <p class="footer__meta">Una apuesta clara · San Ramón, Costa Rica</p>
+    <p class="footer__meta">Una apuesta clara · Cartago, Costa Rica · +506 8813 9961</p>
     <p class="footer__copy">© <span id="year"></span> DODO STUDIO. Hecho con calma y café.</p>
   </footer>
 
@@ -907,7 +994,7 @@
       const year = new Date().getFullYear();
       document.getElementById('year').textContent = year;
 
-      const reduceMotion = window.matchMedia('(prefers-reduce-motion: reduce)').matches;
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const nav = document.getElementById('nav');
       const journey = document.getElementById('journey');
       const dodo = document.getElementById('dodo');
