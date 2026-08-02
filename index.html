@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="DODO STUDIO — páginas web, menús QR, catálogos digitales y automatización de WhatsApp para negocios en Costa Rica. Una apuesta clara." />
-  <title>DODO STUDIO — Una apuesta clara</title>
+  <meta name="description" content="DODO STUDIO — Automatización con IA para negocios en Costa Rica: chatbots, recordatorios de citas, recuperación de llamadas perdidas, reactivación de base de datos y solicitud de reseñas." />
+  <title>DODO STUDIO — Automatización con IA para tu negocio</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 124'><ellipse cx='62' cy='76' rx='34' ry='33' fill='%231F4D3A'/><circle cx='44' cy='38' r='20' fill='%231F4D3A'/></svg>" />
 
   <style>
@@ -761,6 +761,345 @@
         transform: none;
       }
     }
+
+    /* ==================== ACCESIBILIDAD: FOCO ==================== */
+    a:focus-visible,
+    .btn:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    /* ==================== SECCIONES GENÉRICAS ==================== */
+    .section {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 6rem auto;
+      padding: 0 clamp(1.2rem, 6vw, 5rem);
+    }
+
+    .section-head {
+      max-width: 660px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .section-head .eyebrow {
+      display: block;
+      margin-bottom: 0.9rem;
+    }
+
+    .section-head h2 {
+      color: var(--green-deep);
+      margin-bottom: 0.9rem;
+    }
+
+    .section-head p {
+      color: var(--green);
+      font-size: 1.05rem;
+    }
+
+    /* ==================== PROBLEMA / POR QUÉ ==================== */
+    .pains {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .pain {
+      background: var(--card-bg);
+      border: 1px solid rgba(26, 62, 50, 0.1);
+      border-radius: 20px;
+      padding: 1.8rem;
+    }
+
+    .pain__icon {
+      width: 44px;
+      height: 44px;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .pain h3 {
+      color: var(--green-deep);
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pain p {
+      color: var(--green);
+      font-size: 0.95rem;
+    }
+
+    /* ==================== SERVICIOS ==================== */
+    .svc-hint {
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      background: rgba(212, 165, 70, 0.14);
+      border: 1px solid rgba(212, 165, 70, 0.3);
+      border-radius: 999px;
+      padding: 0.7rem 1.4rem;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.4rem;
+    }
+
+    .svc {
+      background: var(--card-bg);
+      border: 1px solid rgba(26, 62, 50, 0.1);
+      border-radius: 22px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .svc:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 60px var(--shadow-lg);
+      border-color: rgba(212, 165, 70, 0.3);
+    }
+
+    .svc__icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      display: grid;
+      place-items: center;
+      color: var(--cream);
+      margin-bottom: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .svc__icon svg { width: 24px; height: 24px; }
+
+    .svc h3 {
+      color: var(--green-deep);
+      font-size: 1.12rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .svc__desc {
+      color: var(--green);
+      font-size: 0.92rem;
+      line-height: 1.65;
+      flex: 1;
+      margin-bottom: 1.3rem;
+    }
+
+    .svc__price {
+      border-top: 1px dashed rgba(26, 62, 50, 0.15);
+      padding-top: 1rem;
+      display: flex;
+      gap: 1.4rem;
+      flex-wrap: wrap;
+    }
+
+    .svc__price .label {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green-light);
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .svc__price .val {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--green-deep);
+    }
+
+    .svc__price .val small {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--green);
+    }
+
+    .price-foot {
+      text-align: center;
+      margin-top: 1.8rem;
+      font-size: 0.85rem;
+      color: var(--green-light);
+      line-height: 1.6;
+    }
+
+    /* ==================== PAQUETES ==================== */
+    .packs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.8rem;
+      align-items: stretch;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .pack {
+      background: var(--card-bg);
+      border: 1px solid rgba(26, 62, 50, 0.12);
+      border-radius: 26px;
+      padding: 2.4rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 20px 50px var(--shadow);
+    }
+
+    .pack--featured {
+      border: 2px solid var(--gold);
+      box-shadow: 0 30px 70px var(--shadow-lg);
+    }
+
+    .pack__badge {
+      position: absolute;
+      top: -14px;
+      left: 2.2rem;
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      color: var(--green-deep);
+      font-size: 0.66rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-weight: 800;
+      padding: 0.42rem 1rem;
+      border-radius: 999px;
+      box-shadow: 0 8px 20px rgba(212, 165, 70, 0.4);
+    }
+
+    .pack h3 {
+      color: var(--green-deep);
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+      margin-top: 0.4rem;
+    }
+
+    .pack__tag {
+      display: block;
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.3rem;
+    }
+
+    .pack__price {
+      margin-bottom: 1.5rem;
+    }
+
+    .pack__line {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .pack__line + .pack__line { margin-top: 0.3rem; }
+
+    .pack__line .impl {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--green-deep);
+      line-height: 1;
+    }
+
+    .pack__line .month {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .pack__line .unit {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--green-light);
+    }
+
+    .pack__line .was {
+      color: var(--green-light);
+      text-decoration: line-through;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .pack__list {
+      list-style: none;
+      margin-bottom: 1.8rem;
+      flex: 1;
+    }
+
+    .pack__list li {
+      padding-left: 1.7rem;
+      position: relative;
+      margin-bottom: 0.6rem;
+      font-size: 0.96rem;
+      color: var(--ink);
+    }
+
+    .pack__list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    .pack .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ==================== SECTORES ==================== */
+    .sectors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      justify-content: center;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .sector {
+      background: var(--card-bg);
+      border: 1px solid rgba(26, 62, 50, 0.12);
+      border-radius: 999px;
+      padding: 0.7rem 1.3rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--green-deep);
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      transition: all 0.25s ease;
+    }
+
+    .sector::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .sector:hover {
+      border-color: var(--gold);
+      background: rgba(212, 165, 70, 0.1);
+      transform: translateY(-2px);
+    }
+
   </style>
 </head>
 <body>
@@ -788,10 +1127,10 @@
       DODO <em>STUDIO</em>
     </a>
     <nav class="nav__links">
-      <a href="#presencia-digital">Presencia</a>
-      <a href="#whatsapp-ordenado">WhatsApp</a>
-      <a href="#sistema-completo">Sistema</a>
-      <a href="#referencias">Proyectos</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#paquetes">Paquetes</a>
+      <a href="#sectores">Sectores</a>
+      <a href="#proceso">Proceso</a>
       <a href="#contacto" class="nav__cta">Cotizar</a>
     </nav>
   </header>
@@ -799,11 +1138,12 @@
   <!-- ===================== HERO ===================== -->
   <section class="hero" id="inicio">
     <div class="hero__content">
-      <p class="eyebrow hero__eyebrow">Estudio de desarrollo web · Costa Rica</p>
-      <h1 class="hero__title">El ave que no se<br>extinguió: <em>volvió a la web</em></h1>
-      <p class="hero__lead">Creamos sistemas simples para que tu negocio venda mejor: páginas web, menús QR, catálogos digitales y atención automatizada sin complicarte.</p>
-      <div class="hero__cta">
-        <a href="#journey" class="btn btn--primary">Ver planes ↓</a>
+      <p class="eyebrow hero__eyebrow">Automatización con IA · Costa Rica</p>
+      <h1 class="hero__title">Que ningún cliente<br>se quede <em>sin respuesta</em></h1>
+      <p class="hero__lead">Chatbots, recordatorios de citas y recuperación de llamadas perdidas que trabajan por vos las 24 horas. Automatizaciones con inteligencia artificial hechas a la medida de tu negocio.</p>
+      <div class="hero__cta" style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="#servicios" class="btn btn--primary">Ver servicios ↓</a>
+        <a href="#contacto" class="btn btn--secondary">Hablar con nosotros</a>
       </div>
     </div>
 
@@ -813,7 +1153,196 @@
     </div>
   </section>
 
-  <!-- ===================== JOURNEY ===================== -->
+  <!-- ===================== POR QUÉ ===================== -->
+  <section class="section" id="por-que">
+    <div class="section-head">
+      <p class="eyebrow">Por qué automatizar</p>
+      <h2>El cliente que no atendés hoy, mañana es de la competencia</h2>
+      <p>Casi todos los negocios pierden clientes por lo mismo: no contestan a tiempo, se les llenan las agendas de ausencias y no le dan seguimiento a quienes ya los conocen.</p>
+    </div>
+    <div class="pains">
+      <div class="pain">
+        <div class="pain__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.7 13.3a11 11 0 0 0 4 4l1.4-1.4a1.8 1.8 0 0 1 1.9-.4c.8.3 1.6.4 2.5.5a1.8 1.8 0 0 1 1.5 1.8V21a1.8 1.8 0 0 1-2 1.8A19 19 0 0 1 3.2 6 1.8 1.8 0 0 1 5 4h2.7"/><path d="m15 3 6 6M21 3l-6 6"/></svg></div>
+        <h3>Llamadas perdidas</h3>
+        <p>Cada llamada sin contestar es un cliente que marca al siguiente de la lista. Un mensaje automático lo retiene.</p>
+      </div>
+      <div class="pain">
+        <div class="pain__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="m10 14 4 4M14 14l-4 4"/></svg></div>
+        <h3>Citas que no llegan</h3>
+        <p>Los ausentismos dejan tu agenda vacía y a tu equipo sin trabajo. Los recordatorios los reducen.</p>
+      </div>
+      <div class="pain">
+        <div class="pain__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Leads que se enfrían</h3>
+        <p>Un interesado sin respuesta rápida pierde el interés. La IA responde al instante, a cualquier hora.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICIOS ===================== -->
+  <section class="section" id="servicios">
+    <div class="section-head">
+      <p class="eyebrow">Servicios</p>
+      <h2>Automatizaciones que podés contratar una por una</h2>
+      <p>Armá tu solución a la medida: elegí un solo servicio, sumá los que necesités o llevá todo en paquete.</p>
+    </div>
+    <div class="svc-hint">★ Cada servicio funciona por separado — no estás obligado a llevar el paquete completo.</div>
+    <div class="services">
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 8V4M8 2h8"/><circle cx="9" cy="14" r="1"/><circle cx="15" cy="14" r="1"/><path d="M2 13v3M22 13v3"/></svg></div>
+        <h3>Chatbot de IA</h3>
+        <p class="svc__desc">Responde consultas y agenda citas 24/7, califica leads y le quita trabajo repetitivo a tu equipo.</p>
+        <div class="svc__price">
+          <div><span class="label">Instalación</span><span class="val">$700</span></div>
+          <div><span class="label">Mensualidad</span><span class="val">$260<small>/mes</small></span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M7 6h.01"/></svg></div>
+        <h3>Landing Page</h3>
+        <p class="svc__desc">Página de aterrizaje enfocada en un solo objetivo: convertir visitas en clientes.</p>
+        <div class="svc__price">
+          <div><span class="label">Instalación</span><span class="val">$500</span></div>
+          <div><span class="label">Mensualidad</span><span class="val">$100<small>/mes</small></span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg></div>
+        <h3>Recordatorios de Citas</h3>
+        <p class="svc__desc">Avisos automáticos antes de cada cita para reducir las ausencias y las agendas vacías.</p>
+        <div class="svc__price">
+          <div><span class="label">Instalación</span><span class="val">$150</span></div>
+          <div><span class="label">Mensualidad</span><span class="val">$50<small>/mes</small></span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2A19 19 0 0 1 3.1 5.2 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8.7 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6A2 2 0 0 1 22 16.9z"/></svg></div>
+        <h3>Missed Call Text Back</h3>
+        <p class="svc__desc">Cuando no podés contestar, un mensaje automático recupera al cliente antes de que llame a otro.</p>
+        <div class="svc__price">
+          <div><span class="label">Instalación</span><span class="val">$150</span></div>
+          <div><span class="label">Mensualidad</span><span class="val">$50<small>/mes</small></span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 15a3 3 0 0 1 5-1.5M13 12v2h2"/></svg></div>
+        <h3>Reagendamiento Automático</h3>
+        <p class="svc__desc">El cliente reprograma su cita solo, sin llamadas ni idas y vueltas con tu recepción.</p>
+        <div class="svc__price">
+          <div><span class="label">Instalación</span><span class="val">$150</span></div>
+          <div><span class="label">Mensualidad</span><span class="val">$40<small>/mes</small></span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6a8 3 0 0 0 16 0V5"/><path d="M4 11v6a8 3 0 0 0 16 0v-6"/></svg></div>
+        <h3>Reactivación de Base de Datos</h3>
+        <p class="svc__desc">Campañas automáticas a tus clientes inactivos para que vuelvan a comprar o agendar.</p>
+        <div class="svc__price">
+          <div><span class="label">Instalación</span><span class="val">$300</span></div>
+          <div><span class="label">Mensualidad</span><span class="val">$75<small>/mes</small></span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.2l1-5.8-4.3-4.1 5.9-.9z"/></svg></div>
+        <h3>Solicitud de Reseñas</h3>
+        <p class="svc__desc">Pide reseñas en el momento justo y sube tu reputación en Google de forma constante.</p>
+        <div class="svc__price">
+          <div><span class="label">Instalación</span><span class="val">$250</span></div>
+          <div><span class="label">Mensualidad</span><span class="val">$30<small>/mes</small></span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="svc__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M5 12v9h14v-9M12 8v13"/><path d="M12 8S11 3 8.5 3a2.5 2.5 0 0 0 0 5zM12 8s1-5 3.5-5a2.5 2.5 0 0 1 0 5z"/></svg></div>
+        <h3>Automatización de Cumpleaños</h3>
+        <p class="svc__desc">Mensajes de cumpleaños que fidelizan y abren una excusa natural para volver a vender.</p>
+        <div class="svc__price">
+          <div><span class="label">Instalación</span><span class="val">$200</span></div>
+          <div><span class="label">Mensualidad</span><span class="val">$25<small>/mes</small></span></div>
+        </div>
+      </div>
+    </div>
+    <p class="price-foot">Precios en USD. No incluyen IVA (13%). El mantenimiento del Chatbot ya incluye el costo de la API de IA.</p>
+  </section>
+
+  <!-- ===================== PAQUETES ===================== -->
+  <section class="section" id="paquetes">
+    <div class="section-head">
+      <p class="eyebrow eyebrow--gold">Paquetes</p>
+      <h2>¿Preferís todo resuelto? Elegí un paquete y ahorrá</h2>
+      <p>Empezá con lo esencial y subí cuando veas resultados. Y si solo necesitás un servicio, contratalo por separado — sin compromiso de llevar el paquete.</p>
+    </div>
+    <div class="packs">
+      <div class="pack">
+        <span class="pack__badge">Punto de partida</span>
+        <h3>Paquete Esencial</h3>
+        <span class="pack__tag">Lo básico para no perder clientes</span>
+        <div class="pack__price">
+          <div class="pack__line"><span class="impl">$1,100</span> <span class="was">$1,250</span> <span class="unit">instalación</span></div>
+          <div class="pack__line"><span class="month">$343/mes</span> <span class="was">$390</span></div>
+        </div>
+        <ul class="pack__list">
+          <li>Chatbot de IA</li>
+          <li>Recordatorios de Citas</li>
+          <li>Missed Call Text Back</li>
+          <li>Solicitud de Reseñas</li>
+        </ul>
+        <a class="btn btn--secondary" href="https://wa.me/50684439202?text=Hola%20DODO%20STUDIO%2C%20me%20interesa%20el%20Paquete%20Esencial">Quiero el Esencial</a>
+      </div>
+
+      <div class="pack pack--featured">
+        <span class="pack__badge">Mejor valor</span>
+        <h3>Automatización Total</h3>
+        <span class="pack__tag">Los 8 servicios en uno</span>
+        <div class="pack__price">
+          <div class="pack__line"><span class="impl">$2,016</span> <span class="was">$2,400</span> <span class="unit">instalación</span></div>
+          <div class="pack__line"><span class="month">$529/mes</span> <span class="was">$630</span></div>
+        </div>
+        <ul class="pack__list">
+          <li>Chatbot de IA</li>
+          <li>Landing Page</li>
+          <li>Recordatorios de Citas</li>
+          <li>Missed Call Text Back</li>
+          <li>Reagendamiento Automático</li>
+          <li>Reactivación de Base de Datos</li>
+          <li>Solicitud de Reseñas</li>
+          <li>Automatización de Cumpleaños</li>
+        </ul>
+        <a class="btn btn--primary" href="https://wa.me/50684439202?text=Hola%20DODO%20STUDIO%2C%20me%20interesa%20la%20Automatizaci%C3%B3n%20Total">Quiero Automatización Total</a>
+      </div>
+    </div>
+    <p class="price-foot">Precios en USD, sin IVA (13%). Plan anual disponible con descuento — consultanos.</p>
+  </section>
+
+  <!-- ===================== SECTORES ===================== -->
+  <section class="section" id="sectores">
+    <div class="section-head">
+      <p class="eyebrow">Para quién</p>
+      <h2>Pensado para negocios que viven de sus citas y sus clientes</h2>
+      <p>Trabajamos con empresas establecidas del Gran Área Metropolitana, donde cada cliente vale y cada cita cuenta.</p>
+    </div>
+    <div class="sectors">
+      <span class="sector">Clínicas dentales y estética</span>
+      <span class="sector">Bufetes y firmas contables</span>
+      <span class="sector">Bienes raíces</span>
+      <span class="sector">Concesionarios</span>
+      <span class="sector">Veterinarias y fisioterapia</span>
+      <span class="sector">Restaurantes y hoteles boutique</span>
+      <span class="sector">Gimnasios y estudios</span>
+      <span class="sector">Colegios y academias</span>
+      <span class="sector">Agencias y constructoras</span>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESO (encabezado) ===================== -->
+  <section class="section" id="proceso" style="margin-bottom: 0;">
+    <div class="section-head">
+      <p class="eyebrow">Cómo funciona</p>
+      <h2>De la primera llamada a todo funcionando</h2>
+      <p>Un proceso simple y acompañado. Vos seguís con tu negocio; nosotros montamos la automatización.</p>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESO (recorrido del dodo) ===================== -->
   <section class="journey" id="journey">
     <div class="journey__spine">
       <svg class="journey__river" viewBox="0 0 100 1000" preserveAspectRatio="none">
@@ -861,113 +1390,68 @@
     </div>
 
     <div class="stops">
-      <!-- STOP 1: PRESENCIA DIGITAL -->
-      <article class="stop stop--left" id="presencia-digital">
+      <article class="stop stop--left">
         <div class="stop__marker">1</div>
         <div class="stop__card">
-          <span class="stop__tag">Desde ₡95.000 + ₡20.000/mes</span>
-          <h2>Presencia Digital</h2>
-          <p>Para negocios que necesitan verse profesionales en internet sin meterse en sistemas complicados. Ideal para restaurantes, cafeterías, barberías, tiendas y servicios locales.</p>
-          <div class="plan-pricing">
-            <span class="plan-pricing__main">Instalación: ₡95.000 · Mensualidad: ₡20.000</span>
-            <span class="plan-pricing__annual">Pago anual: ₡287.000 en total. Incluye instalación + 12 meses de mantenimiento con 20% de ahorro en la mensualidad.</span>
-            <span class="plan-pricing__save">Ahorro anual: ₡48.000</span>
-          </div>
+          <span class="stop__tag">Paso 1</span>
+          <h2>Diagnóstico</h2>
+          <p>Revisamos cómo atendés hoy y dónde se te escapan clientes: llamadas sin contestar, citas que no llegan, seguimiento que no ocurre.</p>
           <ul class="stop__list">
-            <li>Página web profesional y rápida</li>
-            <li>Menú o catálogo digital con QR</li>
-            <li>Botones directos a WhatsApp y redes</li>
-            <li>Mantenimiento mensual para cambios, promos y fotos</li>
+            <li>Reunión inicial sin costo</li>
+            <li>Detectamos los cuellos de botella</li>
+            <li>Definimos qué automatizar primero</li>
           </ul>
         </div>
       </article>
-
-      <!-- STOP 2: WHATSAPP ORDENADO -->
-      <article class="stop stop--right" id="whatsapp-ordenado">
+      <article class="stop stop--right">
         <div class="stop__marker">2</div>
         <div class="stop__card">
-          <span class="stop__tag">Desde ₡180.000 + ₡50.000/mes</span>
-          <h2>WhatsApp Ordenado</h2>
-          <p>Automatización inicial para responder preguntas repetidas, ordenar pedidos o citas y evitar que el negocio pierda clientes por no contestar a tiempo.</p>
-          <div class="plan-pricing">
-            <span class="plan-pricing__main">Instalación: ₡180.000 · Mensualidad: ₡50.000</span>
-            <span class="plan-pricing__annual">Pago anual: ₡660.000 en total. Incluye instalación + 12 meses de soporte con 20% de ahorro en la mensualidad.</span>
-            <span class="plan-pricing__save">Ahorro anual: ₡120.000</span>
-          </div>
+          <span class="stop__tag">Paso 2</span>
+          <h2>Configuración</h2>
+          <p>Montamos tus automatizaciones con el tono, los horarios y los flujos propios de tu negocio.</p>
           <ul class="stop__list">
-            <li>Respuestas automáticas para horarios, ubicación y menú</li>
-            <li>Captura de pedidos, reservas o consultas</li>
-            <li>Registro en Google Sheets</li>
-            <li>Flujos simples con WhatsApp, formularios y automatizaciones</li>
+            <li>Chatbot y flujos a la medida</li>
+            <li>Conexión con WhatsApp y tu agenda</li>
+            <li>Todo con la voz de tu marca</li>
           </ul>
         </div>
       </article>
-
-      <!-- STOP 3: SISTEMA COMPLETO -->
-      <article class="stop stop--left" id="sistema-completo">
+      <article class="stop stop--left">
         <div class="stop__marker">3</div>
         <div class="stop__card">
-          <span class="stop__tag">Desde ₡300.000 + ₡90.000/mes</span>
-          <h2>Sistema Completo</h2>
-          <p>La solución completa para negocios que quieren presencia digital, catálogo o menú, automatización de atención y seguimiento mensual en un solo paquete.</p>
-          <div class="plan-pricing">
-            <span class="plan-pricing__main">Instalación: ₡300.000 · Mensualidad: ₡90.000</span>
-            <span class="plan-pricing__annual">Pago anual: ₡1.164.000 en total. Incluye instalación + 12 meses de soporte, mejoras y mantenimiento con 20% de ahorro en la mensualidad.</span>
-            <span class="plan-pricing__save">Ahorro anual: ₡216.000</span>
-          </div>
+          <span class="stop__tag">Paso 3</span>
+          <h2>Activación</h2>
+          <p>Todo queda funcionando: la IA responde, recuerda citas, recupera llamadas perdidas y pide reseñas por vos.</p>
           <ul class="stop__list">
-            <li>Página web + menú o catálogo digital</li>
-            <li>Atención automatizada para clientes</li>
-            <li>Solicitud de reseñas y reportes mensuales</li>
-            <li>Soporte, mejoras y mantenimiento continuo</li>
+            <li>Pruebas junto a tu equipo</li>
+            <li>Puesta en marcha real</li>
+            <li>Sin frenar tu operación diaria</li>
           </ul>
         </div>
       </article>
-    </div>
-  </section>
-
-  <!-- ===================== REFERENCIAS ===================== -->
-  <section class="referencias" id="referencias">
-    <div class="referencias__header">
-      <p class="eyebrow referencias__eyebrow">Lo que ya hicimos</p>
-      <h2 class="referencias__title">Proyectos funcionando</h2>
-      <p class="referencias__intro">Algunos sitios y demos reales que muestran el tipo de presencia digital que podemos construir para negocios locales.</p>
-    </div>
-
-    <div class="referencias__grid">
-      <!-- REFERENCIA 1 -->
-      <div class="ref-card">
-        <div class="ref-card__logo">JM</div>
-        <h3 class="ref-card__name">Joyería Mía Boutique</h3>
-        <p class="ref-card__desc">Catálogo digital de perfumes y productos con filtros, diseño minimalista y contacto directo por WhatsApp.</p>
-        <a href="https://joyeriamiaboutique.com/" target="_blank" rel="noopener" class="ref-card__link">Ver sitio →</a>
-      </div>
-
-      <!-- REFERENCIA 2 -->
-      <div class="ref-card">
-        <div class="ref-card__logo">EM</div>
-        <h3 class="ref-card__name">El Mosquero Demo</h3>
-        <p class="ref-card__desc">Demo profesional para restaurante/bar. No usa dominio propio, pero muestra cómo se vería una presencia web clara, moderna y lista para clientes.</p>
-        <a href="https://sebass669.github.io/El-Mosquero-Bar-y-Restaurante/" target="_blank" rel="noopener" class="ref-card__link">Ver sitio →</a>
-      </div>
-
-      <!-- REFERENCIA 3 -->
-      <div class="ref-card">
-        <div class="ref-card__logo">EB</div>
-        <h3 class="ref-card__name">El Búho Demo</h3>
-        <p class="ref-card__desc">Demo web para restaurante vegetariano, pensado como landing moderna con enfoque en menú digital.</p>
-        <a href="https://dodo-estudio.github.io/el-buho-demo/" target="_blank" rel="noopener" class="ref-card__link">Ver sitio →</a>
-      </div>
+      <article class="stop stop--right">
+        <div class="stop__marker">4</div>
+        <div class="stop__card">
+          <span class="stop__tag">Paso 4</span>
+          <h2>Acompañamiento</h2>
+          <p>Cada mes damos mantenimiento y ajustamos según los resultados, para que la automatización siga rindiendo.</p>
+          <ul class="stop__list">
+            <li>Soporte mensual continuo</li>
+            <li>Mejoras según los datos</li>
+            <li>Reportes claros de lo que pasa</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </section>
 
   <!-- ===================== CTA ===================== -->
   <section class="cta" id="contacto">
     <div class="cta__inner">
-      <p class="eyebrow cta__eyebrow eyebrow--gold">Ahora es tu turno</p>
-      <h2 class="cta__title">Una apuesta clara</h2>
-      <p class="cta__lead">Elegí un plan, contanos qué necesita tu negocio y armamos una solución clara: web, menú digital, catálogo o atención automatizada.</p>
-      <a href="https://wa.me/50688139961?text=Hola%20DODO%20STUDIO%2C%20quiero%20cotizar%20uno%20de%20sus%20planes%20digitales" class="btn btn--primary">Cotizar por WhatsApp →</a>
+      <p class="eyebrow cta__eyebrow eyebrow--gold">Empecemos</p>
+      <h2 class="cta__title">Automatizá tu negocio</h2>
+      <p class="cta__lead">Contanos qué necesitás y te armamos una propuesta clara: un servicio, un paquete o una solución completa a la medida.</p>
+      <a href="https://wa.me/50684439202?text=Hola%20DODO%20STUDIO%2C%20quiero%20cotizar%20una%20automatizaci%C3%B3n%20con%20IA%20para%20mi%20negocio" class="btn btn--primary">Cotizar por WhatsApp →</a>
     </div>
   </section>
 
@@ -980,7 +1464,7 @@
       </svg>
       DODO <em>STUDIO</em>
     </div>
-    <p class="footer__meta">Una apuesta clara · Cartago, Costa Rica · +506 8813 9961</p>
+    <p class="footer__meta">Automatización con IA · Cartago, Costa Rica · +506 8443 9202</p>
     <p class="footer__copy">© <span id="year"></span> DODO STUDIO. Hecho con calma y café.</p>
   </footer>
 
